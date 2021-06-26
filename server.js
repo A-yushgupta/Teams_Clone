@@ -28,11 +28,31 @@ app.get('/:room', (req, res) => {
   res.render('room', { roomId: req.params.room })
 })
 
+// io.on('connection', socket => {
+//   socket.on('join-room', (roomId, userId) => {
+//     socket.join(roomId);
+// socket.broadcast.to(roomId).emit('user-connected', userId) 
+
+
+// })
+// })
+
 io.on('connection', socket => {
   socket.on('join-room', (roomId, userId) => {
-    socket.join(roomId);
-socket.broadcast.to(roomId).emit('user-connected', userId) 
-})
+    socket.join(roomId)
+    socket.broadcast.to(roomId).emit('user-connected', userId);
+    // messages
+    socket.on('message', (message) => {
+      //send message to the same room
+      io.to(roomId).emit('createMessage', message)
+  }); 
+
+    socket.on('disconnect', () => {
+      socket.broadcast.to(roomId).emit('user-disconnected', userId)
+    })
+  })
 })
 
-server.listen(8000);
+
+
+server.listen(9000);
