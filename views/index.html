@@ -1,0 +1,64 @@
+<!-- HOME PAGE OF WEBSITE -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Chat|Thanks</title>
+    <link rel="icon" href="https://image.flaticon.com/icons/png/512/1177/1177925.png" type="image/x-icon">
+    <link rel="stylesheet" href="videoChatStyle.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Home</title>
+
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1517707711963-adf9078bdf01?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');
+            background-size: cover;
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="home-body">
+    <!-- <a href="window.history.go(-1)">Join Meeting</a> -->
+    <a href="/room" style="color: aliceblue; "><button class="NewMeetingButton">Create Instant Meeting</button></a>
+
+
+
+    <div class="join-container">
+        <header class="join-header">
+            <h1><i class="fas fa-smile"></i>GUPTA_GU</h1>
+        </header>
+        <main class="join-main">
+
+            <!-- FORM TAKING INPUT USERNAME AND ROOM NAME TO MAKE USER ENTER IN A CAHT ROOM  -->
+            <form action="chatOnly.html">
+                <div class="form-control">
+                    <!-- USERNAME INPUT  -->
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Enter username..." required />
+                </div>
+                <div class="form-control">
+                    <!-- ROOMNAME INPUT  -->
+                    <label for="room">Room</label>
+                    <input type="text" name="room" id="room" placeholder="Enter roomname..." required />
+                </div>
+                <button type="submit" class="btn, chit">JOIN CHAT</button>
+            </form>
+        </main>
+    </div>
+    <div style="
+        color: rgb(206, 65, 65);
+        text-align: center;
+        margin: 80px auto 20px;
+      ">Copyright &copy; Ayush Gupta
+        <br>
+        <a href="mailto:ayushguptajn@gmail.com">Contact us</a>
+    </div>
+</body>
+
+</html>

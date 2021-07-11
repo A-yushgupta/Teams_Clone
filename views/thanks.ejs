@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Chat|Thanks</title>
+    <link rel="icon" href="https://image.flaticon.com/icons/png/512/1177/1177925.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/videoChatStyle.css">
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1587047529377-a409aeb98f54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=751&q=80');
+            background-size: cover;
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="thanks-body">
+    <!-- <script>console.log(1)</script> -->
+    <h1 class="thanksHeading" style="text-align: center;">You left the meeting! <br> Thank you for your time , we hope you enjoyed this meeting <br><br>
+    </h1>
+    <!-- <a href="window.history.go(-1)">Join Meeting</a> -->
+
+
+    <a href="/" style="color: aliceblue;"><button class="HomePageButton">Go Home</button></a>
+    <br>
+    <a href="/room" style="color: aliceblue;"><button class="NewMeetingButton">Start New Meeting</button></a>
+    <br>
+    <button onclick="goBack()" class="PreviousMeetingButton">Join Previous Meeting</button>
+    <br>
+    <a href="/" style="color: aliceblue;"><button class="HomePageButton">Enter A Chat Room</button></a>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+
+</html>
