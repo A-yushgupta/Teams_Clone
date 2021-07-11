@@ -1,3 +1,5 @@
+<!-- MAIN VIDEO CHAT PAGE -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,22 +19,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./css/videoChatStyle.css">
-
     <script src="/socket.io/socket.io.js" defer></script>
     <script src="script.js" defer></script>
     <title>Document</title>
     <style>
-        /*#video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, 300px);
-      grid-auto-rows: 300px;
-    } 
-    
-    video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }*/
+
     </style>
 </head>
 
@@ -40,9 +31,8 @@
 
     <script>
         console.log(ROOM_ID);
-        let tt = ROOM_ID;
 
-
+        //FUNCTION TO COPY THE LINK OF CURRENT VIDEO CHAT ROOM
         function Copy() {
             var inputc = document.body.appendChild(document.createElement("input"));
             inputc.value = window.location.href;
@@ -54,20 +44,16 @@
         }
     </script>
 
-
-
-
-
-
-
-
     <div class="main">
+        <!-- VIDEO CALL PART -->
         <div class="main__left">
             <div class="main__videos">
                 <div id="video-grid">
 
                 </div>
             </div>
+
+            <!-- CONTROL BUTTONS -->
             <div class="main__controls">
                 <div class="main_controls_block">
                     <div onclick="muteUnmute()" class="main_controls_button main__mute_button">
@@ -81,38 +67,33 @@
                 </div>
                 <div class="main_controls_block">
                     <div class="main_controls_button">
-                        <i class="fas fa-edit"></i>
-                        <!-- <i class="fas fa-shield-alt"></i> -->
-                        <!-- <span>Security</span> -->
+                        <a href="https://docs.google.com/document/u/0/" target="_blank"> <i class="fas fa-edit"></i></a>
                         <a href="https://docs.google.com/document/u/0/" target="_blank"><span>Make Meeting Notes </span></a>
                     </div>
-                    <div class="main_controls_button">
-                        <i class='far fa-comment-alt'></i>
+                    <div class="main_controls_button" style="color: white;">
+                        <a href="/" target="_blank"><i class='far fa-comment-alt'></i></a>
                         <a href="/" target="_blank"><span> Chat Room </span></a>
                     </div>
-                    <div onclick="shareScreen()" class="main_controls_button">
-                        <i class="fa fa-desktop text-white"></i>
+                    <div onclick="shareScreen()" class="main_controls_button" style="color: blue;">
+                        <div style="color: blue;"><i class="fa fa-desktop text-blue"></i></div>
                         <span id="sharescreen">Share Screen</span>
                     </div>
-                    <!-- 
-                 <div class="main_controls_button">
-                    <i class="fas fa-user-friends"></i>
-                    <span>Participants</span>
-                 </div> -->
-                    <div class="main_controls_button">
+
+                    <div class="main_controls_button" onclick="Copy()" style="color: blue;">
                         <i class="fa fa-copy"></i>
-                        <a onclick="Copy()"> <span> Joining Link</span></a>
-                        <!-- <input type="button" value="Copy Url" onclick="Copy();" /> -->
+                        <a> <span> Joining Link</span></a>
                     </div>
                 </div>
                 <div class="main_controls_block">
+
                     <div class="main_controls_button leave_meeting">
-                        <i class="fas fa-phone-slash"></i>
+                        <a href="/thanks" style="color: red;"> <i class="fas fa-phone-slash"></i></a>
                         <a href="/thanks"> <span class="leave_meeting">Leave Meeting</span></a>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- CHAT PART -->
         <div class="main__right">
             <div class="main__header">
                 <h6>Chat</h6>

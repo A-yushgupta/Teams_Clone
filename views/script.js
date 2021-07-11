@@ -1,7 +1,7 @@
 const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
 
-
+// DECLARATION OF PEER
 const myPeer = new Peer(undefined, { host: "peerjs-server.herokuapp.com", secure: true, port: 443, });
 
 let myVideoStream;
@@ -67,6 +67,7 @@ function connectToNewUser(userId, stream) {
     peers[userId] = call
 }
 
+// APPENDING VIDEO CALL
 function addVideoStream(video, stream) {
     video.srcObject = stream
     video.addEventListener('loadedmetadata', () => {
@@ -74,11 +75,13 @@ function addVideoStream(video, stream) {
     })
     videoGrid.append(video)
 }
-const scrollToBottom = () => {
-    var d = $('.main__chat_window');
-    d.scrollTop(d.prop("scrollHeight"));
-}
 
+//MAKING CHAT SCROLLABLE
+const scrollToBottom = () => {
+        var d = $('.main__chat_window');
+        d.scrollTop(d.prop("scrollHeight"));
+    }
+    //MUTE UNMUTE AND HIDE UNHIDE VIDEO 
 const muteUnmute = () => {
     const enabled = myVideoStream.getAudioTracks()[0].enabled;
     if (enabled) {
@@ -133,6 +136,7 @@ const setPlayVideo = () => {
     document.querySelector('.main__video_button').innerHTML = html;
 }
 
+//SHARE SCREEN FUNCTION
 function shareScreen() {
     return navigator.mediaDevices.getDisplayMedia({
         video: {

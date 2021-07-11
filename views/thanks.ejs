@@ -1,3 +1,5 @@
+<!-- Page rendered after user left the meeting  -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,12 +20,11 @@
 </head>
 
 <body class="thanks-body">
-    <!-- <script>console.log(1)</script> -->
+
     <h1 class="thanksHeading" style="text-align: center;">You left the meeting! <br> Thank you for your time , we hope you enjoyed this meeting <br><br>
     </h1>
-    <!-- <a href="window.history.go(-1)">Join Meeting</a> -->
 
-
+    <!-- thanks heading button -->
     <a href="/" style="color: aliceblue;"><button class="HomePageButton">Go Home</button></a>
     <br>
     <a href="/room" style="color: aliceblue;"><button class="NewMeetingButton">Start New Meeting</button></a>
@@ -33,6 +34,7 @@
     <a href="/" style="color: aliceblue;"><button class="HomePageButton">Enter A Chat Room</button></a>
 
     <script>
+        //function for calling previous window tab taking help from that returning to previous meeting
         function goBack() {
             window.history.back();
         }
