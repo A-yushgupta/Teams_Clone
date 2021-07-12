@@ -27,8 +27,8 @@
 </head>
 
 <body>
-
-    <a href="/room" style="color: aliceblue; display: inline-block;" target="_blank"><button class="NewMeetingButton" >Create Instant Meeting</button></a>
+    <span id="linkk"></span>
+    <a href="/room" target="_blank" style="color: aliceblue; display: inline-block;"><button class="NewMeetingButton" >Create Instant Meeting</button></a>
     <div class="chat-container">
         <header class="chat-header">
             <h1><i class="fas fa-smile"></i> Chat</h1>
@@ -40,6 +40,10 @@
                     document.getElementById("new-meet-btn").disabled = true;
                     document.getElementsById("linky").innerHTML = ROOM_ID;
                     console.log(ROOM_ID);
+                }
+
+                function lin() {
+                    document.getElementById("linkk").innerHTML = ROOM_ID;
                 }
             </script>
             <style>
@@ -79,8 +83,9 @@
         color: rgb(92, 7, 7);
         text-align: center;
         font-weight:bolder;
+        text-decoration:underline;
         margin: 80px auto 20px;
-      ">Copyright &copy; Ayush Gupta
+      "> &copy; Ayush Gupta
         <br>
         <a href="mailto:ayushguptajn@gmail.com">&#128231 Contact us</a>
     </div>

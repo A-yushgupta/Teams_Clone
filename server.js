@@ -3,6 +3,7 @@ const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
 const formatMessage = require('./utils/messages');
+const { ExpressPeerServer } = require('peer');
 const {
     userJoin,
     getCurrentUser,
@@ -10,13 +11,20 @@ const {
     getRoomUsers
 } = require('./utils/users');
 
+
 //UUID FOR GENERATION OF RANDOM ROOM IDS
 const { v4: uuidV4 } = require('uuid')
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 const cors = require('cors');
+// DECLARING PORT
+const port = process.env.PORT || 8000
+server.listen(`${port}`)
 
+const peerServer = ExpressPeerServer(server, {
+    debug: true
+});
 
 app.set('view engine', 'ejs')
 app.use(cors());
@@ -25,7 +33,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'views')));
 
 const botName = 'GUPTA_GU BOT';
-
+app.use('/peerjs', peerServer);
 // Run when client connects
 io.on('connection', socket => {
     socket.on('joinRoom', ({ username, room }) => {
@@ -115,7 +123,3 @@ io.on('connection', socket => {
         })
     })
 })
-
-// DECLARING PORT
-const port = process.env.PORT || 9000
-server.listen(`${port}`)

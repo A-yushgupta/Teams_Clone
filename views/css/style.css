@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 :root {
-    --dark-color-a: #a32505;
-    --dark-color-b: #7c2929;
+    --dark-color-a: #740707;
+    --dark-color-b: #a72e2e;
     --light-color: #e6e9ff;
     --success-color: #5cb85c;
     --error-color: #d9534f;
@@ -49,7 +49,7 @@ a {
     max-width: 1100px;
     background: #fff;
     background-image: url('https://images.unsplash.com/photo-1584968124544-d10ce10dd21f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80');
-    margin: 30px auto;
+    margin: 0px auto;
     overflow: hidden;
 }
 
@@ -227,7 +227,7 @@ a {
         text-shadow: 0 0 10px #fff, 0 0 20px rgb(223, 201, 130), 0 0 30px #e60073, 0 0 40px #eeb447, 0 0 50px #e6dc59, 0 0 60px #eca636, 0 0 70px #e60073;
     }
     to {
-        text-shadow: 0 0 20px rgb(27, 230, 54), 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #b3140f, 0 0 80px #ff4da6;
+        text-shadow: 0 0 20px rgb(230, 27, 27), 0 0 30px #9b0808, 0 0 40px #eb463a, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #b3140f, 0 0 80px #eb5a20;
     }
 }
 

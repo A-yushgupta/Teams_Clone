@@ -2,6 +2,7 @@ const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
 
 // DECLARATION OF PEER
+
 const myPeer = new Peer(undefined, { host: "peerjs-server.herokuapp.com", secure: true, port: 443, });
 
 let myVideoStream;
@@ -9,6 +10,7 @@ const myVideo = document.createElement('video')
 myVideo.muted = true;
 const peers = {}
 
+// for connecting  audio and video of users
 navigator.mediaDevices.getUserMedia({
     video: true,
     audio: true,
@@ -21,6 +23,7 @@ navigator.mediaDevices.getUserMedia({
     addVideoStream(myVideo, stream)
     myPeer.on('call', call => {
         call.answer(stream)
+
         const video = document.createElement('video')
         call.on('stream', userVideoStream => {
             addVideoStream(video, userVideoStream)
@@ -68,6 +71,12 @@ function connectToNewUser(userId, stream) {
 }
 
 // APPENDING VIDEO CALL
+
+/**
+ * 
+ * @param {} video video of new user that is recently connected
+ * @param {} stream audio and video  that we are  trying to fetch
+ */
 function addVideoStream(video, stream) {
     video.srcObject = stream
     video.addEventListener('loadedmetadata', () => {
@@ -121,13 +130,13 @@ const setUnmuteButton = () => {
 }
 
 const setStopVideo = () => {
-    const html = `
+        const html = `
     <i class="fas fa-video"></i>
     <span>Stop Video</span>
   `
-    document.querySelector('.main__video_button').innerHTML = html;
-}
-
+        document.querySelector('.main__video_button').innerHTML = html;
+    }
+    //changing viedo icon
 const setPlayVideo = () => {
     const html = `
   <i class="stop fas fa-video-slash"></i>
@@ -137,6 +146,12 @@ const setPlayVideo = () => {
 }
 
 //SHARE SCREEN FUNCTION
+/**
+ * 
+ * @returns  A Promise whose fulfillment handler receives a MediaStream object when the requested media
+ *  has successfully been obtained.  when the requested media
+   has successfully been obtained the handler will be receing a MediaStream object
+ */
 function shareScreen() {
     return navigator.mediaDevices.getDisplayMedia({
         video: {

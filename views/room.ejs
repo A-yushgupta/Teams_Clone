@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="./css/videoChatStyle.css">
     <script src="/socket.io/socket.io.js" defer></script>
     <script src="script.js" defer></script>
-    <title>Document</title>
+    <link rel="icon" href="https://image.flaticon.com/icons/png/512/2198/2198108.png">
+    <title>Meeting Room</title>
     <style>
 
     </style>
@@ -41,6 +42,10 @@
             document.execCommand('copy');
             inputc.parentNode.removeChild(inputc);
             alert("URL Copied.");
+        }
+        //function for calling previous window tab taking help from that returning to previous meeting
+        function goBack() {
+            window.history.back();
         }
     </script>
 
@@ -70,9 +75,9 @@
                         <a href="https://docs.google.com/document/u/0/" target="_blank"> <i class="fas fa-edit"></i></a>
                         <a href="https://docs.google.com/document/u/0/" target="_blank"><span>Make Meeting Notes </span></a>
                     </div>
-                    <div class="main_controls_button" style="color: white;">
-                        <a href="/" target="_blank"><i class='far fa-comment-alt'></i></a>
-                        <a href="/" target="_blank"><span> Chat Room </span></a>
+                    <div class="main_controls_button" style="color:blue;">
+                        <a onclick="goBack()"><i class='far fa-comment-alt'></i></a>
+                        <a href="/"><span> Chat Room </span></a>
                     </div>
                     <div onclick="shareScreen()" class="main_controls_button" style="color: blue;">
                         <div style="color: blue;"><i class="fa fa-desktop text-blue"></i></div>
@@ -87,7 +92,7 @@
                 <div class="main_controls_block">
 
                     <div class="main_controls_button leave_meeting">
-                        <a href="/thanks" style="color: red;"> <i class="fas fa-phone-slash"></i></a>
+                        <a href="/thanks" style="color: white;"> <i class="fas fa-phone-slash"></i></a>
                         <a href="/thanks"> <span class="leave_meeting">Leave Meeting</span></a>
                     </div>
                 </div>
